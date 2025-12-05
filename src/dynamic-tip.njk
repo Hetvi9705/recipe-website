@@ -1,11 +1,19 @@
 ---
 layout: layouts/base.njk
-title: Cooking Tips
+title: Dynamic Cooking Tip
 ---
 
-<h1>Random Cooking Tip</h1>
+<h1>{{ title }}</h1>
 
-<button id="load-tip">Get a Tip</button>
-<p id="tip-output"></p>
+<p id="tip">Click the button to get a random cooking tip!</p>
 
-<script src="/scripts/dynamic-tip.js"></script>
+<button id="loadTip">Get Cooking Tip</button>
+
+<script>
+document.getElementById("loadTip").addEventListener("click", async () => {
+  const res = await fetch("/.netlify/functions/random-tip");
+  const data = await res.json();
+  document.getElementById("tip").textContent = data.tip;
+});
+</script>
+
