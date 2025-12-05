@@ -1,7 +1,7 @@
 // This runs on the server (Node). No document, no DOM.
 
 // Example external API (Spoonacular)
-const API_URL = "https://api.spoonacular.com/food/tips/random?apiKey=www.themealdb.com/api/json/v1/1/list.php?c=list";
+const API_URL = "https://api.spoonacular.com/food/tips/random?apiKey=https://www.themealdb.com/api/json/v1/1/random.php";
 
 module.exports = async function () {
   try {
